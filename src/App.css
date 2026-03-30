@@ -2,15 +2,14 @@ body{
   padding: 0;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: aliceblue;
 }
 
-/* CONTAINER PADRÃO */
 .container {
   width: 100%;
   min-height: 100vh;
 }
 
-/* MENU CENTRALIZADO */
 .menu {
   background-color: black;
   color: white;
@@ -24,13 +23,11 @@ body{
   align-items: center;     /* horizontal */
 }
 
-/* TÍTULO */
 .title{
   font-size: 50px;
   margin-bottom: 20px;
 }
 
-/* BOTÃO MENU */
 .button__menu{
   padding: 15px 30px;
   font-size: 18px;
@@ -64,7 +61,6 @@ body{
   margin-top: 53px;
 }
 
-/* BOTÃO CONTINUAR */
 .button__img{
   display: block;
   margin: 20px auto;
@@ -82,6 +78,8 @@ body{
 }
 .end{
 text-align: center;
+margin-top: 300px;
+overflow: hidden;
 }
 .image{
   width: 100%;

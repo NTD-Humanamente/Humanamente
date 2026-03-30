@@ -14,7 +14,7 @@ const iniciarJogo = () => {
   };
 const escolherOpcao = (proximo) => {
     setFaseAtual(proximo);
-    setMostrarOpcoes(false); // volta pra tela de imagem
+    setMostrarOpcoes(false);
   };
 return (
     <div className="container">

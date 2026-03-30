@@ -1,7 +1,7 @@
-import image1 from './assets/Image/Image1.png';
-import image2 from './assets/Image/Image2.png';
-import image3 from './assets/Image/Image3.png';
-
+import image1 from './assets/Image/baixados1.png';
+import image2 from './assets/Image/baixados2.png';
+import image3 from './assets/Image/baixados.png';
+import image4 from './assets/Image/baixados4.png'
 
 const gameData = {
   inicio: {
@@ -62,8 +62,8 @@ const gameData = {
     ]
   },
   fim: {
-    texto: "Boa! A unidade está establizada!",
-    image:image3,
+    texto: "A unidade está establizada!",
+    image:image4,
     descricao:"Ao final das três etapas, a unidade está estabilizada, os parâmetros voltaram à faixa operacional normal e nenhuma parada não programada ocorreu. O que difere entre os grupos não é o resultado final, mas a qualidade do processo — como a equipe se comunicou, decidiu e se apoiou ao longo da crise",
     opcoes: []
   }
