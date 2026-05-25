@@ -1,7 +1,7 @@
-import image1 from './assets/Image/baixados1.png';
+/*import image1 from './assets/Image/baixados1.png';
 import image2 from './assets/Image/baixados2.png';
 import image3 from './assets/Image/baixados.png';
-import image4 from './assets/Image/baixados4.png'
+import image4 from './assets/Image/baixados4.png';
 
 const gameData = {
   inicio: {
@@ -69,4 +69,4 @@ const gameData = {
   }
 };
 
-export default gameData;
+export default gameData;*/
