@@ -1,0 +1,35 @@
+.header__profile{
+    display: flex;
+    align-items: center;
+}
+.header__profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 0px;
+}
+.header__profile-button{
+    background-color: transparent;
+    border:none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.header__profile-container{
+    margin-left: 50px;
+}
+.header__profile-name{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.header__profile-function{
+    color: rgb(185, 194, 203);
+    margin: 0;
+}
+.header__menu{
+    display:flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: rgb(9, 15, 26);
+}
