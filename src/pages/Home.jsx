@@ -16,7 +16,7 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
         </div>
 
         <button className='header__button' onClick={onStartGame}>
-          Iniciar Treinamento novamente
+          Iniciar Treinamentos
         </button>
       </header>
 
