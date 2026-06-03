@@ -1,11 +1,38 @@
 .game{
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  gap: 50px;
   margin-top: 40px;
+  align-items: flex-start;
+}
+
+.timer__circle {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgb(9, 15, 26);
+  border: 1px solid rgb(125, 241, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  animation: fadeInUp 0.6s ease-out;
+}
+.timer__text {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.game__scenario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .game__container{
-  text-align: center;
+  display: flex;
+  width: 880px;
+  justify-content: space-between;
+  animation: fadeInUp 0.6s ease-out;
 }
 .game__text{
   color: rgb(125, 241, 255);
@@ -14,16 +41,18 @@
 }
 .game__title{
   color: white;
-  font-size: 24px;
+  font-size: 35px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 .game__description{
   display: flex;
   flex-direction: column;
   margin: 0px auto 30px;
-  width: 800px;
-  border:solid 2px rgb(39, 83, 156);
+  width: 900px;
+  border:solid 1px rgb(125, 241, 255);
   border-radius:15px;
+  animation: fadeInUp 0.6s ease-out 0.15s both;
 }
 .game__description-img{
   width: 100%;
@@ -32,7 +61,7 @@
   margin-bottom: 15px;
 }
 .game__description-text{
-  color: rgb(185, 194, 203);
+  color: white;
   font-size: 22px;
   text-align: center;
   padding: 0 20px;
@@ -43,22 +72,42 @@
   text-align: center;
   padding: 0 20px;
 }
-
 .game__options{
   display: flex;
-  width: 800px;
+  width: 900px;
   margin: 0px auto;
    gap: 20px;
+  animation: fadeInUp 0.6s ease-out 0.3s both;
 }
 .game__option{
   padding: 15px;
   background-color: transparent;
-  color: rgb(125, 241, 255);
-  border:solid 2px rgb(39, 83, 156);
+  color: white;
+  border:solid 1px rgb(125, 241, 255);
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+  height: 110px;
 }
 .game__option:hover{
   background-color: rgb(39, 83, 156);
+}
+.tip__container{
+  margin-top: 30px;
+  animation: fadeInUp 0.6s ease-out 0.45s both;
+}
+.tip{
+  color: rgb(185, 194, 203);
+  font-size: 15px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

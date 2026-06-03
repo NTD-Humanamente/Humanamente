@@ -1,5 +1,5 @@
 import image1 from "../assets/Image/2.png";
-import image2 from "../assets/Image/montanha.png";
+import image2 from "../assets/Image/ref.png";
 import image3 from "../assets/Image/1.png";
 import image4 from "../assets/Image/3.png";
 import image5 from "../assets/Image/4.png";
@@ -16,13 +16,13 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
         </div>
 
         <button className='header__button' onClick={onStartGame}>
-          Iniciar Treinamentos
+          Iniciar Treinamento
         </button>
       </header>
 
       <main>
         <section className='description'>
-          <img className='description__img' src={image2} alt="Montanha" />
+          <img className='description__img' src={image2} alt="imagem da refinaria" />
 
           <div className='description__content'>
             <p className='description__text'><span>⚡</span>Desenvolva Consciência Operacional</p>
@@ -65,7 +65,7 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
 
               <li className='cards__item'>
                 <img className='cards__img' src={image5} alt="icone de dois usuários" />
-                <h3 className='cards__subtitle'>Cooperação/Trabalho em Equipe</h3>
+                <h3 className='cards__subtitle'>Cooperação / Trabalho em Equipe</h3>
                 <p className='cards__description'>Fortaleça a cooperação e a comunicação entre turnos para evitar falhas sistêmicas.</p>
               </li>
 

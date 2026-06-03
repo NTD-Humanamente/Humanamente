@@ -26,9 +26,10 @@
 .header__profile-function{
     color: rgb(185, 194, 203);
     margin: 0;
+    margin-bottom: 10px;
 }
 .header__menu{
-    display:flex;
+  display:flex;
   justify-content: space-around;
   width: 100%;
   background-color: rgb(9, 15, 26);

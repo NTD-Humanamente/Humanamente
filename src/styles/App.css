@@ -5,6 +5,7 @@
 @import url('./menu/header.css');
 @import url('./menu/menu.css');
 @import url('./game/game.css');
+@import url('./game/history.css');
 
 body{
   padding: 0;

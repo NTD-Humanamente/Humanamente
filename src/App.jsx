@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import './styles/App.css';
-import Login from './pages/login';
 import Home from './pages/Home';
 import Menu from './pages/menu';
 import Game from './pages/Game';
-import Game1 from './pages/Game1';
+import History from './pages/History';
 
 
 
@@ -32,9 +31,9 @@ return (
         />
       )}
 
-      {screen === "menu" && <Menu onLogin={() => setScreen("game")}/>}
-      {screen === "game" && <Game onLogin={() => setScreen("game1")}/>}
-      {screen === "game1" && <Game1 />}
+      {screen === "menu" && <Menu onLogin={() => setScreen("history")}/>}
+      {screen === "history" && <History onLogin={() => setScreen("game")}/>}
+      {screen === "game" && <Game />}
     </div>
   );
 }
