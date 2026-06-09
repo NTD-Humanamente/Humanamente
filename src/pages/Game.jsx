@@ -1,8 +1,7 @@
 import image1 from "../assets/Image/2.png";
 import imageProfile from "../assets/Image/historico.png";
-import imageGame from "../assets/Image/reuniao.png";
 import CronoImg from "../assets/Image/cronometro.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gameData from "../gameData";
 
 let audioContext = null;
@@ -62,14 +61,14 @@ const playTimeUpSound = () => {
 export default function Game() {
   const [time, setTime] = useState(120);
   const [scenarioIndex, setScenarioIndex] = useState(0);
+  const nextCalledRef = useRef(false);
 
-  const scenarioKeys = Object.keys(gameData);
-  const fase = gameData[scenarioKeys[scenarioIndex]];
+  const fase = gameData[scenarioIndex];
 
   const handleNextScenario = () => {
     setScenarioIndex(prev => {
       const nextIndex = prev + 1;
-      if (nextIndex < scenarioKeys.length) {
+      if (nextIndex < gameData.length) {
         return nextIndex;
       }
       return prev;
@@ -77,19 +76,21 @@ export default function Game() {
   };
 
   useEffect(() => {
+    nextCalledRef.current = false;
     setTime(120);
   }, [scenarioIndex]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(prev => {
-        if (prev <= 1) {
+        if (prev <= 1 && !nextCalledRef.current) {
+          nextCalledRef.current = true;
           clearInterval(timer);
           playTimeUpSound();
           setTimeout(() => handleNextScenario(), 500);
           return 0;
         }
-        playTickSound();
+        if (prev <= 30 && prev > 0) playTickSound();
         return prev - 1;
       });
     }, 1000);

@@ -1,6 +1,7 @@
 import image1 from "../assets/Image/2.png";
 import imageProfile from "../assets/Image/historico.png";
 import imageMenu from "../assets/Image/h2s.png";
+import imageMenu2 from  "../assets/Image/descoque.png";
 
 export default function Menu({ scrolled, onLogin }) {
   return (
@@ -67,9 +68,29 @@ export default function Menu({ scrolled, onLogin }) {
                 </div>
                 <button className='menu__fase-button' onClick={onLogin}>Iniciar Treinamento</button>
             </div>
+
+            
+          </div>
+           <div className='menu__fase'>
+            <div className='menu__fase-card'>
+            <img className='menu__fase-img' src={imageMenu2} alt="Iniciante" />
+            </div>
+            <div className='menu__fase-info'>
+                <p className='menu__fase-nivel'>Complexo</p>
+                <h2 className='menu__fase-title'>Interrupção Inesperada do Descoque</h2>
+                <p className='menu__fase-description'>Durante o ciclo de descoque do reator R‑98501B, ocorre uma interrupção imprevista. Parte do coque permanece no interior do equipamento, sob condições potencialmente perigosas. Pressões e temperaturas começam a se comportar de forma instável. Há risco de coque quente, emissões de vapores e impacto na integridade do equipamento e da unidade.</p>
+                <div className='menu__fase-skill-container'>
+                <p className='menu__fase-skill'>Comunicação</p>
+                <p className='menu__fase-skill'>Consciência Situacional</p>
+                <p className='menu__fase-skill'>Liderança</p>
+                </div>
+                <button className='menu__fase-button' onClick={onLogin}>Iniciar Treinamento</button>
+            </div>
+
           </div>
           </div>
           </div>
+          
         </section>
         </main>
       

@@ -62,7 +62,7 @@
 .menu__fase{
     border:solid 1px rgb(125, 241, 255);
     width: 600px;
-    height: 615px;
+    height: 645px;
     margin-top: 20px;
     border-radius: 10px;
     background-color: rgb(9, 15, 26);
@@ -95,6 +95,7 @@
     color: rgb(185, 194, 203);
     margin-left: 20px;
     margin-top: 10px;
+    height: 90px;
 }
 .menu__fase-skill-container{
     display: flex;
