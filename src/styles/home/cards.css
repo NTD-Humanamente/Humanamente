@@ -40,6 +40,12 @@
   list-style: none;
   background-color: rgb(19, 24, 34);
   animation: fadeInUp 0.8s ease-out both;
+  cursor: pointer;
+}
+.cards__item:hover{
+  scale: 1.05;
+  box-shadow: 5px 5px 20px rgba(182, 223, 227);
+  
 }
 .cards__item:nth-child(1) {
   animation-delay: 0.1s;
@@ -58,6 +64,7 @@
 }
 .cards__img{
   margin-top: 50px;
+  margin-bottom: 20px;
   width: 40px;
   height: 40px;
   border-radius: 12px;

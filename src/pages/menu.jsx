@@ -2,8 +2,10 @@ import image1 from "../assets/Image/2.png";
 import imageProfile from "../assets/Image/historico.png";
 import imageMenu from "../assets/Image/h2s.png";
 import imageMenu2 from  "../assets/Image/descoque.png";
+import imageTeam from "../assets/Image/equip.png";
+import SkillsRadarChart from "../components/SkillsRadarChart";
 
-export default function Menu({ scrolled, onLogin }) {
+export default function Menu({ scrolled, onLogin, profileName }) {
   return (
     
     <>
@@ -13,13 +15,13 @@ export default function Menu({ scrolled, onLogin }) {
                   <p className='header__name'>Humanamente</p>
                 </div>
         <div className='header__profile'>
-          <img className='header__profile-img' src={imageProfile} alt="Profile" />       
+          <img className='header__profile-img' src={imageProfile} alt="icone do historico" />       
          <button className='header__profile-button'>
           Histórico
          </button>
          <div className='header__profile-container'>
-          <p className='header__profile-name'>Christian</p>
-          <p className='header__profile-function'>Técnico de Segurança</p>
+          <p className='header__profile-name'>{profileName}</p>
+          <img className='header__profile-team' src={imageTeam} alt="icone de time" />
          </div>
         </div>
         </header>
@@ -30,16 +32,7 @@ export default function Menu({ scrolled, onLogin }) {
           <div className='menu__skills'>
            <h2 className='menu__title'>Perfil de Habilidades da Equipe</h2>
            <p className='menu__subtitle'>Evolução de suas competências</p>
-           <p className='menu__skill'>Consciênia Situacional</p>
-           <div className='menu__skill-bar'></div>
-           <p className='menu__skill'>Tomada de Decisão</p>
-           <div className='menu__skill-bar'></div>
-           <p className='menu__skill'>Cooperação / Trabalho em Equipe</p>
-           <div className='menu__skill-bar'></div>
-           <p className='menu__skill'>Liderança / Habilidades Gerenciais</p>
-           <div className='menu__skill-bar'></div>
-           <p className='menu__skill'>Comunicação</p>
-           <div className='menu__skill-bar'></div>
+           <SkillsRadarChart />
           </div>
           <div className='menu__instructions'>
                   <h2 className='menu__instructions-title'>Como Funciona</h2>
@@ -86,7 +79,6 @@ export default function Menu({ scrolled, onLogin }) {
                 </div>
                 <button className='menu__fase-button' onClick={onLogin}>Iniciar Treinamento</button>
             </div>
-
           </div>
           </div>
           </div>

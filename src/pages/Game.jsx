@@ -3,6 +3,8 @@ import imageProfile from "../assets/Image/historico.png";
 import CronoImg from "../assets/Image/cronometro.png";
 import { useState, useEffect, useRef } from "react";
 import gameData from "../gameData";
+import imageTeam from "../assets/Image/equip.png";
+
 
 let audioContext = null;
 
@@ -58,7 +60,7 @@ const playTimeUpSound = () => {
   }
 };
 
-export default function Game() {
+export default function Game({ profileName, onGameEnd }) {
   const [time, setTime] = useState(120);
   const [scenarioIndex, setScenarioIndex] = useState(0);
   const nextCalledRef = useRef(false);
@@ -66,6 +68,10 @@ export default function Game() {
   const fase = gameData[scenarioIndex];
 
   const handleNextScenario = () => {
+    if (scenarioIndex === gameData.length - 1) {
+      onGameEnd();
+      return;
+    }
     setScenarioIndex(prev => {
       const nextIndex = prev + 1;
       if (nextIndex < gameData.length) {
@@ -87,7 +93,13 @@ export default function Game() {
           nextCalledRef.current = true;
           clearInterval(timer);
           playTimeUpSound();
-          setTimeout(() => handleNextScenario(), 500);
+          setTimeout(() => {
+            if (scenarioIndex === gameData.length - 1) {
+              onGameEnd();
+            } else {
+              handleNextScenario();
+            }
+          }, 500);
           return 0;
         }
         if (prev <= 30 && prev > 0) playTickSound();
@@ -95,7 +107,7 @@ export default function Game() {
       });
     }, 1000);
     return () => clearInterval(timer);
-  }, [scenarioIndex]);  
+  }, [scenarioIndex, onGameEnd]);  
 
   return (
     <div>
@@ -110,8 +122,8 @@ export default function Game() {
               Histórico
              </button>
              <div className='header__profile-container'>
-              <p className='header__profile-name'>Christian</p>
-              <p className='header__profile-function'>Técnico de Segurança</p>
+              <p className='header__profile-name'>{profileName}</p>
+             <img className='header__profile-team' src={imageTeam} alt="icone de time" />
              </div>
             </div>
             </header>

@@ -1,8 +1,9 @@
 import image1 from "../assets/Image/2.png";
 import imageProfile from "../assets/Image/historico.png";
 import historyData from "../historyData";
+import imageTeam from "../assets/Image/equip.png";
 
-export default function History({onLogin}) {
+export default function History({onLogin, profileName, back}) {
 
   return (
     <div>
@@ -17,13 +18,14 @@ export default function History({onLogin}) {
               Histórico
              </button>
              <div className='header__profile-container'>
-              <p className='header__profile-name'>Christian</p>
-              <p className='header__profile-function'>Técnico de Segurança</p>
+              <p className='header__profile-name'>{profileName}</p>
+             <img className='header__profile-team' src={imageTeam} alt="icone de time" />
              </div>
             </div>
             </header>
             <main>
             <section className='history'>
+              <button className="history__button-back" onClick={back}>⬅ Voltar</button>
             <div className='game__container-history'> 
                 <div className="game__timer">
                   <p className='game__text'>{historyData[0].subtitle}</p>

@@ -3,6 +3,20 @@
   display: flex;
   flex-direction: column;
 }
+.history__button-back{
+ width: 150px;
+ height: 35px;
+ margin-left: 120px;
+  color: white;
+  background-color: rgb(39, 83, 156);
+  border: none;
+  font-weight: bold;
+   border-radius: 5px;
+  cursor: pointer;
+}
+.history__button-back:hover{
+ background-color: rgb(46, 119, 246, 0.8);
+}
 .game__container-history{
   display: flex;
   justify-content: center;
@@ -24,14 +38,14 @@ margin-left: 110px;
 }
 .history__text{
   color: white;
-  font-size: 22px;
+  font-size: 18px;
   padding: 20px;
   white-space: pre-wrap;
 }
 .history__media{
 display: flex;
 flex-direction: column;
-gap: 20px;
+gap: 30px;
 width: 600px;
 }
 .history__img{

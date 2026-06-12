@@ -1,16 +1,22 @@
 import { useState, useEffect } from 'react'
 import './styles/App.css';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Menu from './pages/menu';
 import Game from './pages/Game';
 import History from './pages/History';
+import Feedback from './pages/Feedback';
+import End from './pages/End'
 
 
 
 function App() {
   const [screen, setScreen] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  
+  const [profileName, setProfileName] = useState(() => {
+    return localStorage.getItem('header__profile-name') || '';
+  });
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,20 +26,34 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLoginSubmit = (teamName) => {
+    setProfileName(teamName);
+    localStorage.setItem('header__profile-name', teamName);
+    setScreen("menu");
+  };
 
 return (
   <div className="container">
       {screen === "home" && (
         <Home
           scrolled={scrolled}
-          onStartGame={() => setScreen("menu")}
+          onStartGame={() => setScreen("login")}
           onLogin={() => console.log("login")}
         />
       )}
 
-      {screen === "menu" && <Menu onLogin={() => setScreen("history")}/>}
-      {screen === "history" && <History onLogin={() => setScreen("game")}/>}
-      {screen === "game" && <Game />}
+      {screen === "login" && (
+        <Login
+          scrolled={scrolled}
+          onSubmit={handleLoginSubmit}
+        />
+      )}
+
+      {screen === "menu" && <Menu profileName={profileName} onLogin={() => setScreen("history")}/>}
+      {screen === "history" && <History profileName={profileName} onLogin={() => setScreen("game")} back={() => setScreen("menu")}/>}
+      {screen === "game" && <Game profileName={profileName} onGameEnd={() => setScreen("end")} />}
+        {screen === "end" && <End profileName={profileName} onLogin={() => setScreen("feedback")}/>}
+      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} />}
     </div>
   );
 }

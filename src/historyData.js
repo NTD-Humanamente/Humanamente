@@ -1,26 +1,24 @@
 import imageGame2 from "./assets/Image/cenario1history.png";
-import videoHistory from "./assets/Video/videohistory1.mp4";
+import videoHistory from "./assets/Video/videoinity.mp4";
 import imageGame3 from "./assets/Image/cenario2history.png";
 import videoHistory2 from "./assets/Video/videohistory2.mp4";
 
 const historyData = [{
   subtitle: "Operação em Equipe - Simples",
   title: "Vazamento e Alarme de H₂S",
-  text: `Você acaba de iniciar seu turno na unidade de coque.
-A operação parece estável, mas uma série de eventos pode comprometer a segurança da equipe e da planta.
+  text: `A unidade de coque da refinaria está operando em carga nominal. A B‑98508A, bomba crítica de circulação, mantém o fluxo de derivado para a fracionadora.
 
-O painel indica os primeiros sinais de anormalidade:
+Durante o turno, o operador de painel observa uma leve queda de vazão e um aumento gradual da temperatura no topo da coluna. O histórico mostra pequenas oscilações nas últimas horas, mas nada fora do limite.
 
-• Queda da vazão da B‑98508A.
+De repente, um conjunto de alarmes é acionado: os detectores de H₂S AI‑98553 e AI‑98555 indicam presença de gás tóxico na área próxima à B‑98508A/B e ao V‑98516. A sala de controle recebe uma chuva de alarmes simultâneos, e a equipe de campo relata cheiro forte e sensação de irritação na região.
 
-• Aumento da temperatura no topo da fracionadora.
+A partir deste momento, a operação deixa de ser rotina e passa a ser uma condição anormal com potencial para emergência.
 
-• Instantes depois, os detectores AI‑98553 e AI‑98555 sinalizam presença de H₂S na área.
+Você faz parte da equipe responsável por coordenar a resposta: painel, campo, SMS, brigada e manutenção. Suas decisões vão influenciar a segurança das pessoas, a integridade dos equipamentos e a continuidade da operação.
 
-A equipe está distribuída na unidade. O tempo é curto.
-Suas decisões definirão a coordenação, a segurança e o resultado da operação. 
+Em cada evento, você terá três opções de atuação. Não há “resposta correta”, mas cada escolha leva a um caminho diferente, com consequências próprias. Em todos os casos, o objetivo é o mesmo: proteger vidas, o meio ambiente e o patrimônio, aprendendo com as decisões tomadas.
 
-Você terá 2 minutos para cada decisão.`,
+Leia o contexto, escolha sua ação em até 2 minutos e acompanhe a evolução do cenário.`,
   image: imageGame2,
   video: videoHistory
 },

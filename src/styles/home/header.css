@@ -14,7 +14,7 @@
 }
 .header__logo{
   display:flex;
-  gap: 10px; 
+  gap: 10px;
 }
 .header__img{
   width: 40px;
