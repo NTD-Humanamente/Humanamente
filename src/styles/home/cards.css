@@ -19,8 +19,19 @@
   width: 700px;
   text-align: center;
 }
+.cards__background{
+  background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.2) 40%,
+      rgba(0,0,0,0.4) 60%,
+      rgba(0,0,0,0.95) 100%
+    );
+  padding-bottom: 1px;
+}
 .cards__container{
-  margin-bottom: 150px;
+  margin-bottom: 120px;
+  text-align: center;
 }
 .cards__list{
   display: flex;

@@ -5,7 +5,7 @@ import imageMenu2 from  "../assets/Image/descoque.png";
 import imageTeam from "../assets/Image/equip.png";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 
-export default function Menu({ scrolled, onLogin, profileName }) {
+export default function Menu({ scrolled, onLogin, profileName, scores}) {
   return (
     
     <>
@@ -32,7 +32,7 @@ export default function Menu({ scrolled, onLogin, profileName }) {
           <div className='menu__skills'>
            <h2 className='menu__title'>Perfil de Habilidades da Equipe</h2>
            <p className='menu__subtitle'>Evolução de suas competências</p>
-           <SkillsRadarChart />
+           <SkillsRadarChart scores={scores}/>
           </div>
           <div className='menu__instructions'>
                   <h2 className='menu__instructions-title'>Como Funciona</h2>

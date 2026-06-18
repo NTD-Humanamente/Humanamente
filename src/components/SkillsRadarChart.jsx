@@ -1,10 +1,10 @@
-export default function SkillsRadarChart() {
+export default function SkillsRadarChart({ scores }) {
   const skills = [
-    { name: "Consciência\nsituacional", value: 30 },
-    { name: "Tomada de\ndecisão", value: 40 },
-    { name: "Cooperação /\ntrabalho em equipe", value: 70 },
-    { name: "Liderança /\nhabilidades gerenciais", value: 10 },
-    { name: "Comunicação", value: 50 },
+    { name: "Consciência\nsituacional", value: scores?.consciencia_situacional || 0 },
+    { name: "Tomada de\ndecisão", value: scores?.tomada_decisao || 0 },
+    { name: "Cooperação /\ntrabalho em equipe", value: scores?.cooperacao || 0 },
+    { name: "Liderança /\nhabilidades gerenciais", value: scores?.lideranca || 0 },
+    { name: "Comunicação", value: scores?.comunicacao || 0 },
   ];
 
   const levels = 5;

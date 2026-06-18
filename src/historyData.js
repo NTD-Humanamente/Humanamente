@@ -1,7 +1,6 @@
 import imageGame2 from "./assets/Image/cenario1history.png";
 import videoHistory from "./assets/Video/videoinity.mp4";
 import imageGame3 from "./assets/Image/cenario2history.png";
-import videoHistory2 from "./assets/Video/videohistory2.mp4";
 
 const historyData = [{
   subtitle: "Operação em Equipe - Simples",
@@ -33,7 +32,7 @@ A qualquer momento, uma decisão precipitada ou a falta de coordenação pode re
 
 Você terá 2 minutos para cada decisão.`,
   image: imageGame3,
-  video: videoHistory2
+  video: videoHistory
 },
 ]
 

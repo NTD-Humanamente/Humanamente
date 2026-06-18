@@ -63,13 +63,41 @@ const playTimeUpSound = () => {
 export default function Game({ profileName, onGameEnd }) {
   const [time, setTime] = useState(120);
   const [scenarioIndex, setScenarioIndex] = useState(0);
+  const [scores, setScores] = useState({
+    comunicacao: 0,
+    cooperacao: 0,
+    lideranca: 0,
+    tomada_decisao: 0,
+    consciencia_situacional: 0,
+  });
   const nextCalledRef = useRef(false);
 
   const fase = gameData[scenarioIndex];
 
+  const handleOptionClick = (optionIndex) => {
+    const selectedOption = fase.opcoes[optionIndex];
+    if (selectedOption.notech) {
+      setScores(prev => ({
+        comunicacao: prev.comunicacao + (selectedOption.notech.comunicacao || 0),
+        cooperacao: prev.cooperacao + (selectedOption.notech.cooperacao || 0),
+        lideranca: prev.lideranca + (selectedOption.notech.lideranca || 0),
+        tomada_decisao: prev.tomada_decisao + (selectedOption.notech.tomada_decisao || 0),
+        consciencia_situacional: prev.consciencia_situacional + (selectedOption.notech.consciencia_situacional || 0),
+      }));
+    }
+    handleNextScenario();
+  };
+
   const handleNextScenario = () => {
     if (scenarioIndex === gameData.length - 1) {
-      onGameEnd();
+      const finalScores = {
+        comunicacao: Math.round(scores.comunicacao / 10),
+        cooperacao: Math.round(scores.cooperacao / 10),
+        lideranca: Math.round(scores.lideranca / 10),
+        tomada_decisao: Math.round(scores.tomada_decisao / 10),
+        consciencia_situacional: Math.round(scores.consciencia_situacional / 10),
+      };
+      onGameEnd(finalScores);
       return;
     }
     setScenarioIndex(prev => {
@@ -95,7 +123,14 @@ export default function Game({ profileName, onGameEnd }) {
           playTimeUpSound();
           setTimeout(() => {
             if (scenarioIndex === gameData.length - 1) {
-              onGameEnd();
+              const finalScores = {
+                comunicacao: Math.round(scores.comunicacao / 10),
+                cooperacao: Math.round(scores.cooperacao / 10),
+                lideranca: Math.round(scores.lideranca / 10),
+                tomada_decisao: Math.round(scores.tomada_decisao / 10),
+                consciencia_situacional: Math.round(scores.consciencia_situacional / 10),
+              };
+              onGameEnd(finalScores);
             } else {
               handleNextScenario();
             }
@@ -107,7 +142,7 @@ export default function Game({ profileName, onGameEnd }) {
       });
     }, 1000);
     return () => clearInterval(timer);
-  }, [scenarioIndex, onGameEnd]);  
+  }, [scenarioIndex, scores, onGameEnd]);  
 
   return (
     <div>
@@ -145,9 +180,9 @@ export default function Game({ profileName, onGameEnd }) {
                   <p className='game__description-text'>{fase.descricao}</p>
                 </div>
                 <div className='game__options'>
-                  <button className='game__option' onClick={handleNextScenario}>{fase.opcoes[0].texto}</button>
-                  <button className='game__option' onClick={handleNextScenario}>{fase.opcoes[1].texto}</button>
-                  <button className='game__option' onClick={handleNextScenario}>{fase.opcoes[2].texto}</button>
+                  <button className='game__option' onClick={() => handleOptionClick(0)}>{fase.opcoes[0].texto}</button>
+                  <button className='game__option' onClick={() => handleOptionClick(1)}>{fase.opcoes[1].texto}</button>
+                  <button className='game__option' onClick={() => handleOptionClick(2)}>{fase.opcoes[2].texto}</button>
                 </div>
                 <div className='tip__container'>
                 <p className='tip'>ⓘ Dica: Não existe decisão perfeita. Existe decisão consciente.</p>

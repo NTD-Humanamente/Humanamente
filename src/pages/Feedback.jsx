@@ -3,7 +3,7 @@ import imageProfile from "../assets/Image/historico.png";
 import imageTeam from "../assets/Image/equip.png";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 
-export default function Feedback({onMenu, restart, profileName}) {
+export default function Feedback({onMenu, restart, profileName, scores}) {
 
   return (
     <div>
@@ -44,7 +44,7 @@ export default function Feedback({onMenu, restart, profileName}) {
                 <div className="feedback__skills">
                   <h3 className="feedback__skills-title">Indicadores Não Técnicos</h3>
                   <p className="feedback__skills-text">Resultados consolidados</p>
-                  <SkillsRadarChart />
+                  <SkillsRadarChart scores={scores}/>
                 </div>
                 <button className="feedback__restart" onClick={restart}>Reiniciar Simulação</button>
                </div>

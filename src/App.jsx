@@ -16,6 +16,7 @@ function App() {
   const [profileName, setProfileName] = useState(() => {
     return localStorage.getItem('header__profile-name') || '';
   });
+  const [gameScores, setGameScores] = useState(null);
 
 
   useEffect(() => {
@@ -30,6 +31,11 @@ function App() {
     setProfileName(teamName);
     localStorage.setItem('header__profile-name', teamName);
     setScreen("menu");
+  };
+
+  const handleGameEnd = (scores) => {
+    setGameScores(scores);
+    setScreen("end");
   };
 
 return (
@@ -49,11 +55,11 @@ return (
         />
       )}
 
-      {screen === "menu" && <Menu profileName={profileName} onLogin={() => setScreen("history")}/>}
+      {screen === "menu" && <Menu profileName={profileName} onLogin={() => setScreen("history")} scores={gameScores}/>}
       {screen === "history" && <History profileName={profileName} onLogin={() => setScreen("game")} back={() => setScreen("menu")}/>}
-      {screen === "game" && <Game profileName={profileName} onGameEnd={() => setScreen("end")} />}
-        {screen === "end" && <End profileName={profileName} onLogin={() => setScreen("feedback")}/>}
-      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} />}
+      {screen === "game" && <Game profileName={profileName} onGameEnd={handleGameEnd} />}
+        {screen === "end" && <End profileName={profileName}  onLogin={() => setScreen("feedback")}/>}
+      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores}/>}
     </div>
   );
 }

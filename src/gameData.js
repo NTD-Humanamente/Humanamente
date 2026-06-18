@@ -9,6 +9,19 @@ import imageGame8 from "./assets/Image/game8.png";
 import imageGame9 from "./assets/Image/game9.png";
 import imageGame10 from "./assets/Image/game10.png";
 
+function seededShuffle(array, seed) {
+  const shuffled = [...array];
+  let random = seed;
+  const randomNext = () => {
+    random = (random * 9301 + 49297) % 233280;
+    return random / 233280;
+  };
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(randomNext() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 const gameData = [
   {
@@ -96,31 +109,31 @@ const gameData = [
       {
         texto: "Reduzir carga da unidade e ajustar refluxo e pressão da coluna, comunicando claramente que o objetivo é estabilizar e reduzir inventário até entender o tamanho do vazamento.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 80,
+          "cooperacao": 75,
+          "lideranca": 80,
+          "tomada_decisao": 85,
+          "consciencia_situacional": 85,
         }
       },
       {
         texto: "Manter carga por enquanto, ajustando apenas refluxo e controles, para “não impactar a produção” até haver certeza de que é necessário.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 60,
+          "cooperacao": 55,
+          "lideranca": 50,
+          "tomada_decisao": 55,
+          "consciencia_situacional": 50,
         }
       },
       {
         texto: "Pedir que a equipe de Engenharia decida sobre a estratégia de carga, enquanto você se concentra em acompanhar apenas os alarmes.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 55,
+          "cooperacao": 60,
+          "lideranca": 45,
+          "tomada_decisao": 50,
+          "consciencia_situacional": 60,
         }
       }
     ]
@@ -134,31 +147,31 @@ const gameData = [
       {
         texto: "Reforçar que ninguém se aproxima sem autorização formal de SMS, exigir SCBA e detector portátil, e orientar inspeção visual a partir de posições protegidas.",
       notech:{
-          "comunicacao": 90,
+          "comunicacao": 75,
           "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "lideranca": 80,
+          "tomada_decisao": 80,
+          "consciencia_situacional": 85,
         }
       },
       {
         texto: "Permitir aproximação com EPI incompleto, “apenas para ver rápido”, considerando que a concentração de H₂S parece moderada.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 55,
+          "cooperacao": 55,
+          "lideranca": 45,
+          "tomada_decisao": 40,
+          "consciencia_situacional": 40,
         }
       },
       {
         texto: "Suspender qualquer inspeção de campo até que todos os alarmes caiam, mantendo equipe apenas em posição de espera.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 50,
+          "cooperacao": 50,
+          "lideranca": 40,
+          "tomada_decisao": 45,
+          "consciencia_situacional": 55,
         }
       }
     ]
@@ -172,31 +185,31 @@ const gameData = [
       {
         texto: "Isolar a bomba: ordenar fechamento das válvulas de sucção e descarga, solicitar desenergização elétrica da B‑98508A e reforçar cordão de segurança com brigada.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 80,
+          "cooperacao": 75,
+          "lideranca": 80,
+          "tomada_decisao": 85,
+          "consciencia_situacional": 80,
         }
       },
       {
         texto: "Tentar reestabelecer a operação da bomba ajustando apenas controles no painel, sem isolar imediatamente, para ver se a condição melhora.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 55,
+          "cooperacao": 55,
+          "lideranca": 45,
+          "tomada_decisao": 40,
+          "consciencia_situacional": 45,
         }
       },
       {
         texto: "Focar apenas em monitorar os detectores de H₂S e deixar a questão da bomba para manutenção decidir depois.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 50,
+          "cooperacao": 50,
+          "lideranca": 40,
+          "tomada_decisao": 45,
+          "consciencia_situacional": 50,
         }
       }
     ]
@@ -211,30 +224,30 @@ const gameData = [
         texto: "Reforçar checklist de coordenação: campo confirma sucção/descarga fechadas, painel confirma intertravamentos e SMS valida zona de isolamento.",
       notech:{
           "comunicacao": 90,
-          "cooperacao": 80,
+          "cooperacao": 90,
           "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "tomada_decisao": 80,
+          "consciencia_situacional": 85,
         }
       },
       {
         texto: "Assumir que “deve estar tudo certo” com base na primeira informação, sem revalidar passos com cada área.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 50,
+          "cooperacao": 50,
+          "lideranca": 45,
+          "tomada_decisao": 45,
+          "consciencia_situacional": 40,
         }
       },
       {
         texto: "Focar apenas na interação com SMS, deixando de lado campo e painel, acreditando que “o importante é a segurança, o resto eles se viram”.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 60,
+          "cooperacao": 50,
+          "lideranca": 45,
+          "tomada_decisao": 50,
+          "consciencia_situacional": 60,
         }
       }
     ]
@@ -248,31 +261,31 @@ const gameData = [
       {
         texto: "Confirmar corte de carga com painel, comunicar imediatamente Supervisor, Operadores de campo e SMS, e propor parada controlada se a situação estiver estabilizada.",
       notech:{
-          "comunicacao": 90,
+          "comunicacao": 85,
           "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "lideranca": 80,
+          "tomada_decisao": 80,
+          "consciencia_situacional": 80,
         }
       },
       {
         texto: "Defender parada emergencial imediata, mesmo com algumas informações ainda incompletas, priorizando risco zero.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 80,
+          "cooperacao": 75,
+          "lideranca": 80,
+          "tomada_decisao": 75,
+          "consciencia_situacional": 75,
         }
       },
       {
         texto: "Adiar qualquer definição de tipo de parada até “mais dados” estarem disponíveis, mantendo a discussão aberta.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 55,
+          "cooperacao": 55,
+          "lideranca": 45,
+          "tomada_decisao": 40,
+          "consciencia_situacional": 50,
         }
       }
     ]
@@ -286,31 +299,31 @@ const gameData = [
       {
         texto: "Verificar desempenho de forno, estabilidade de carga e utilidades, ajustando V‑13 e outras variáveis para manter o nível dentro de faixa segura.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 70,
+          "cooperacao": 65,
+          "lideranca": 60,
+          "tomada_decisao": 70,
+          "consciencia_situacional": 80,
         }
       },
       {
         texto: "Tratar o aumento de nível como algo secundário, acreditando que “vai estabilizar sozinho” depois que o vazamento for resolvido.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 50,
+          "cooperacao": 50,
+          "lideranca": 45,
+          "tomada_decisao": 45,
+          "consciencia_situacional": 40,
         }
       },
       {
         texto: "Delegar completamente a análise de níveis à equipe de outra unidade, sem acompanhar ativamente.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 45,
+          "cooperacao": 50,
+          "lideranca": 40,
+          "tomada_decisao": 45,
+          "consciencia_situacional": 45,
         }
       }
     ]
@@ -324,31 +337,31 @@ const gameData = [
       {
         texto: "Planejar, junto com Manutenção e Engenharia, um roteiro de inspeção, limpeza e eventual descoque, integrando lições aprendidas do evento.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 85,
+          "cooperacao": 90,
+          "lideranca": 80,
+          "tomada_decisao": 75,
+          "consciencia_situacional": 80,
         }
       },
       {
         texto: "Propor um retorno rápido à operação, minimizando o tempo de parada, dando pouca ênfase ao aprendizado do evento.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 55,
+          "cooperacao": 55,
+          "lideranca": 55,
+          "tomada_decisao": 50,
+          "consciencia_situacional": 50,
         }
       },
       {
         texto: "Deixar o encaminhamento totalmente nas mãos da manutenção, sem participar ativamente da definição.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 50,
+          "cooperacao": 55,
+          "lideranca": 40,
+          "tomada_decisao": 45,
+          "consciencia_situacional": 50,
         }
       }
     ]
@@ -363,34 +376,38 @@ const gameData = [
         texto: "Participar ativamente do debriefing, revisando decisões, comunicação, coordenação e propondo melhorias nas habilidades não técnicas.",
       notech:{
           "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "cooperacao": 85,
+          "lideranca": 80,
+          "tomada_decisao": 70,
+          "consciencia_situacional": 65,
         }
       },
       {
         texto: "Tratar o debriefing como formalidade, com participação mínima, mas presença física.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 60,
+          "cooperacao": 60,
+          "lideranca": 55,
+          "tomada_decisao": 55,
+          "consciencia_situacional": 55,
         }
       },
       {
         texto: "Evitar o debriefing, priorizando “voltar logo para a rotina”.",
       notech:{
-          "comunicacao": 90,
-          "cooperacao": 80,
-          "lideranca": 85,
-          "tomada_decisao": 90,
-          "consciencia_situacional": 95,
+          "comunicacao": 30,
+          "cooperacao": 30,
+          "lideranca": 25,
+          "tomada_decisao": 30,
+          "consciencia_situacional": 55,
         }
       }
     ]
   },
 ]
+
+gameData.forEach((cenario, index) => {
+  cenario.opcoes = seededShuffle(cenario.opcoes, index + 1);
+});
 
 export default gameData;
