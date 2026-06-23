@@ -3,32 +3,18 @@ import imageProfile from "../assets/Image/historico.png";
 import imageMenu from "../assets/Image/h2s.png";
 import imageMenu2 from  "../assets/Image/descoque.png";
 import imageTeam from "../assets/Image/equip.png";
+import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 
-export default function Menu({ scrolled, onLogin, profileName, scores}) {
+export default function Menu({ scrolled, onLogin, profileName, scores, onLogout}) {
   return (
-    
+
     <>
-        <header className='header__menu'>
-                <div className='header__logo'>
-                  <img className='header__img' src={image1} alt="Logo" />
-                  <p className='header__name'>Humanamente</p>
-                </div>
-        <div className='header__profile'>
-          <img className='header__profile-img' src={imageProfile} alt="icone do historico" />       
-         <button className='header__profile-button'>
-          Histórico
-         </button>
-         <div className='header__profile-container'>
-          <p className='header__profile-name'>{profileName}</p>
-          <img className='header__profile-team' src={imageTeam} alt="icone de time" />
-         </div>
-        </div>
-        </header>
+        <Header profileName={profileName} onLogout={onLogout} />
 
         <main>
         <section className='menu'>
-           <div className='menu__collumn'> 
+           <div className='menu__collumn'>
           <div className='menu__skills'>
            <h2 className='menu__title'>Perfil de Habilidades da Equipe</h2>
            <p className='menu__subtitle'>Evolução de suas competências</p>
@@ -59,10 +45,10 @@ export default function Menu({ scrolled, onLogin, profileName, scores}) {
                 <p className='menu__fase-skill'>Consciência Situacional</p>
                 <p className='menu__fase-skill'>Liderança</p>
                 </div>
-                <button className='menu__fase-button' onClick={onLogin}>Iniciar Treinamento</button>
+                <button className='menu__fase-button' onClick={() => onLogin(0)}>Iniciar Treinamento</button>
             </div>
 
-            
+
           </div>
            <div className='menu__fase'>
             <div className='menu__fase-card'>
@@ -77,15 +63,15 @@ export default function Menu({ scrolled, onLogin, profileName, scores}) {
                 <p className='menu__fase-skill'>Consciência Situacional</p>
                 <p className='menu__fase-skill'>Liderança</p>
                 </div>
-                <button className='menu__fase-button' onClick={onLogin}>Iniciar Treinamento</button>
+                <button className='menu__fase-button' onClick={() => onLogin(1)}>Iniciar Treinamento</button>
             </div>
           </div>
           </div>
           </div>
-          
+
         </section>
         </main>
-      
+
     </>
   );
 }

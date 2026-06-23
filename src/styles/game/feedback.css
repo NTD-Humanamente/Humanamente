@@ -42,12 +42,14 @@
    justify-content: space-around;
    width: 1000px;
    animation: fadeInUp 0.8s ease-out;
+   gap: 20px;
 }
 .feedback__report-block{
 border: solid 1px rgb(125, 241, 255);
  border-radius: 10px;
  background-color: rgb(9, 15, 26);
-width: 450px;
+width:450px;
+padding-right: 18px;
 }
 .feedback__report-title{
     color: white;
@@ -65,6 +67,8 @@ width: 450px;
 .feedback__report-text{
     color:rgb(185, 194, 203);
     margin-left: 20px;
+    font-size: 19px;
+    white-space: pre-wrap;
 }
 .feedback__block{
     display: flex;

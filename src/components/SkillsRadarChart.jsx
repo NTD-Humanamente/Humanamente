@@ -8,7 +8,7 @@ export default function SkillsRadarChart({ scores }) {
   ];
 
   const levels = 5;
-  const maxValue = 100;
+  const maxValue = 5;
   const radius = 120;
   const centerX = 200;
   const centerY = 200;
@@ -145,7 +145,7 @@ export default function SkillsRadarChart({ scores }) {
                 fill="#fff"
                 fontWeight="bold"
               >
-                {skill.value}
+                {skill.value.toFixed(1)}
               </text>
             </g>
           );

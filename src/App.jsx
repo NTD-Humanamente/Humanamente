@@ -11,13 +11,19 @@ import End from './pages/End'
 
 
 function App() {
-  const [screen, setScreen] = useState("home");
+  const [screen, setScreen] = useState(() => {
+    const isLoggedIn = localStorage.getItem('header__profile-name');
+    return isLoggedIn ? "menu" : "home";
+  });
   const [scrolled, setScrolled] = useState(false);
   const [profileName, setProfileName] = useState(() => {
     return localStorage.getItem('header__profile-name') || '';
   });
-  const [gameScores, setGameScores] = useState(null);
-
+  const [gameScores, setGameScores] = useState(() => {
+    const saved = localStorage.getItem('user__scores');
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [selectedScenario, setSelectedScenario] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,12 +36,23 @@ function App() {
   const handleLoginSubmit = (teamName) => {
     setProfileName(teamName);
     localStorage.setItem('header__profile-name', teamName);
+    localStorage.setItem('login__timestamp', new Date().toISOString());
     setScreen("menu");
   };
 
   const handleGameEnd = (scores) => {
     setGameScores(scores);
+    localStorage.setItem('user__scores', JSON.stringify(scores));
     setScreen("end");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('header__profile-name');
+    localStorage.removeItem('user__scores');
+    localStorage.removeItem('login__timestamp');
+    setProfileName('');
+    setGameScores(null);
+    setScreen("home");
   };
 
 return (
@@ -55,11 +72,11 @@ return (
         />
       )}
 
-      {screen === "menu" && <Menu profileName={profileName} onLogin={() => setScreen("history")} scores={gameScores}/>}
-      {screen === "history" && <History profileName={profileName} onLogin={() => setScreen("game")} back={() => setScreen("menu")}/>}
-      {screen === "game" && <Game profileName={profileName} onGameEnd={handleGameEnd} />}
-        {screen === "end" && <End profileName={profileName}  onLogin={() => setScreen("feedback")}/>}
-      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores}/>}
+      {screen === "menu" && <Menu profileName={profileName} scores={gameScores} onLogin={(scenarioIndex) => {setSelectedScenario(scenarioIndex); setScreen("history");}} onLogout={handleLogout}/>}
+      {screen === "history" && <History profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("game")} back={() => setScreen("menu")} onLogout={handleLogout}/>}
+      {screen === "game" && <Game profileName={profileName} onGameEnd={handleGameEnd} onLogout={handleLogout}/>}
+      {screen === "end" && <End profileName={profileName} scores={gameScores} onLogin={() => setScreen("feedback")} onLogout={handleLogout}/>}
+      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores} onLogout={handleLogout}/>}
     </div>
   );
 }
