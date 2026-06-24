@@ -164,3 +164,127 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .menu__collumn {
+    margin-left: 0;
+  }
+
+  .menu__skills {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .menu__skill-bar {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .menu__instructions {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .menu__fase {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+  }
+
+  .menu__fase-button {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .cenario__opitions {
+    justify-content: center;
+  }
+
+  .cenario__title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .menu__skills {
+    max-width: 100%;
+  }
+
+  .menu__title {
+    font-size: 20px;
+  }
+
+  .menu__subtitle {
+    font-size: 13px;
+  }
+
+  .menu__skill {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+
+  .menu__skill-bar {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .menu__instructions {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .menu__instructions-title {
+    font-size: 16px;
+  }
+
+  .menu__instructions-text {
+    font-size: 13px;
+  }
+
+  .menu__fase {
+    max-width: 100%;
+  }
+
+  .menu__fase-img {
+    height: 200px;
+  }
+
+  .menu__fase-title {
+    font-size: 22px;
+  }
+
+  .menu__fase-description {
+    font-size: 13px;
+  }
+
+  .menu__fase-skill {
+    font-size: 10px;
+    width: 120px;
+  }
+
+  .menu__fase-button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cenario__title {
+    font-size: 22px;
+  }
+
+  .cenario__description {
+    font-size: 14px;
+  }
+}

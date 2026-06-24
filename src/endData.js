@@ -1,4 +1,5 @@
 import imageEnd from "./assets/Image/cenarioend.png";
+import imageEnd2 from "./assets/Image/descoque.png";
 import videoHistory from "./assets/Video/videoend.mp4";
 
 const endData = [{
@@ -12,6 +13,16 @@ const endData = [{
 
   O vazamento foi contido, a unidade foi estabilizada e as lições aprendidas passam a fazer parte da memória operacional do time. Mais do que apagar um “incêndio pontual”, o que fica é a capacidade coletiva de reconhecer ameaças, reagir em conjunto e proteger a vida em cada turno de trabalho.`,
   image: imageEnd,
+  video: videoHistory
+},
+{
+  subtitle: "Operação em Equipe - Simples",
+  title: "Parada de Manutenção Programada",
+  text: ` O incidente de segurança é contido sem maiores danos, a temperatura de combustão é estabilizada dentro da faixa segura, e as ações corretivas são implementadas para evitar danos ao regenerador.
+  
+  O cenário é encerrado quando a temperatura de combustão é estabilizada dentro da faixa segura, e as ações corretivas são implementadas para evitar danos ao regenerador. 
+  `,
+  image: imageEnd2,
   video: videoHistory
 },
 ]

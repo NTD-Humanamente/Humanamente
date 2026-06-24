@@ -61,7 +61,7 @@ const playTimeUpSound = () => {
   }
 };
 
-export default function Game({ profileName, onGameEnd, onLogout }) {
+export default function Game({ profileName, onGameEnd, onLogout, selectedScenario = 0 }) {
   const [time, setTime] = useState(120);
   const [scenarioIndex, setScenarioIndex] = useState(0);
   const [scores, setScores] = useState({
@@ -73,7 +73,9 @@ export default function Game({ profileName, onGameEnd, onLogout }) {
   });
   const nextCalledRef = useRef(false);
 
-  const fase = gameData[scenarioIndex];
+  const cenarioKey = selectedScenario === 0 ? 'cenario1' : 'cenario2';
+  const scenarioData = gameData[0][cenarioKey];
+  const fase = scenarioData[scenarioIndex];
 
   const handleOptionClick = (optionIndex) => {
     const selectedOption = fase.opcoes[optionIndex];
@@ -90,20 +92,20 @@ export default function Game({ profileName, onGameEnd, onLogout }) {
   };
 
   const handleNextScenario = () => {
-    if (scenarioIndex === gameData.length - 1) {
+    if (scenarioIndex === scenarioData.length - 1) {
       const finalScores = {
-        comunicacao: parseFloat((scores.comunicacao / 10).toFixed(1)),
-        cooperacao: parseFloat((scores.cooperacao / 10).toFixed(1)),
-        lideranca: parseFloat((scores.lideranca / 10).toFixed(1)),
-        tomada_decisao: parseFloat((scores.tomada_decisao / 10).toFixed(1)),
-        consciencia_situacional: parseFloat((scores.consciencia_situacional / 10).toFixed(1)),
+        comunicacao: parseFloat((scores.comunicacao / scenarioData.length).toFixed(1)),
+        cooperacao: parseFloat((scores.cooperacao / scenarioData.length).toFixed(1)),
+        lideranca: parseFloat((scores.lideranca / scenarioData.length).toFixed(1)),
+        tomada_decisao: parseFloat((scores.tomada_decisao / scenarioData.length).toFixed(1)),
+        consciencia_situacional: parseFloat((scores.consciencia_situacional / scenarioData.length).toFixed(1)),
       };
       onGameEnd(finalScores);
       return;
     }
     setScenarioIndex(prev => {
       const nextIndex = prev + 1;
-      if (nextIndex < gameData.length) {
+      if (nextIndex < scenarioData.length) {
         return nextIndex;
       }
       return prev;
@@ -123,13 +125,13 @@ export default function Game({ profileName, onGameEnd, onLogout }) {
           clearInterval(timer);
           playTimeUpSound();
           setTimeout(() => {
-            if (scenarioIndex === gameData.length - 1) {
+            if (scenarioIndex === scenarioData.length - 1) {
               const finalScores = {
-                comunicacao: parseFloat((scores.comunicacao / 10).toFixed(1)),
-                cooperacao: parseFloat((scores.cooperacao / 10).toFixed(1)),
-                lideranca: parseFloat((scores.lideranca / 10).toFixed(1)),
-                tomada_decisao: parseFloat((scores.tomada_decisao / 10).toFixed(1)),
-                consciencia_situacional: parseFloat((scores.consciencia_situacional / 10).toFixed(1)),
+                comunicacao: parseFloat((scores.comunicacao / scenarioData.length).toFixed(1)),
+                cooperacao: parseFloat((scores.cooperacao / scenarioData.length).toFixed(1)),
+                lideranca: parseFloat((scores.lideranca / scenarioData.length).toFixed(1)),
+                tomada_decisao: parseFloat((scores.tomada_decisao / scenarioData.length).toFixed(1)),
+                consciencia_situacional: parseFloat((scores.consciencia_situacional / scenarioData.length).toFixed(1)),
               };
               onGameEnd(finalScores);
             } else {

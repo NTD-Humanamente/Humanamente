@@ -122,3 +122,107 @@ border: solid 1px rgb(125, 241, 255);
     transform: translateY(0);
   }
 }
+
+@media (max-width: 768px) {
+  .feedback {
+    padding: 0 15px;
+  }
+
+  .feedback__header {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .feedback__title {
+    font-size: 22px;
+  }
+
+  .feedback__results {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .feedback__report {
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feedback__report-block {
+    width: 100%;
+    padding-right: 15px;
+  }
+
+  .feedback__skills {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .feedback__restart {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback {
+    padding: 0 10px;
+  }
+
+  .feedback__header {
+    gap: 10px;
+  }
+
+  .feedback__title {
+    font-size: 18px;
+  }
+
+  .feedback__text {
+    font-size: 13px;
+  }
+
+  .feedback__button {
+    width: 80px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .feedback__report-block {
+    padding-right: 12px;
+  }
+
+  .feedback__report-title {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  .feedback__report-description {
+    margin: 0 15px 15px;
+    font-size: 13px;
+  }
+
+  .feedback__report-text {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  .feedback__skills-title {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  .feedback__skills-text {
+    margin: 0 15px 20px;
+    font-size: 13px;
+  }
+
+  .feedback__restart {
+    max-width: 100%;
+    font-size: 14px;
+  }
+}

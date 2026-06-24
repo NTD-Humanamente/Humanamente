@@ -1,12 +1,9 @@
-import image1 from "../assets/Image/2.png";
-import imageProfile from "../assets/Image/historico.png";
 import imageMenu from "../assets/Image/h2s.png";
 import imageMenu2 from  "../assets/Image/descoque.png";
-import imageTeam from "../assets/Image/equip.png";
 import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 
-export default function Menu({ scrolled, onLogin, profileName, scores, onLogout}) {
+export default function Menu({ onLogin, profileName, scores, onLogout}) {
   return (
 
     <>
@@ -55,9 +52,9 @@ export default function Menu({ scrolled, onLogin, profileName, scores, onLogout}
             <img className='menu__fase-img' src={imageMenu2} alt="Iniciante" />
             </div>
             <div className='menu__fase-info'>
-                <p className='menu__fase-nivel'>Complexo</p>
-                <h2 className='menu__fase-title'>Interrupção Inesperada do Descoque</h2>
-                <p className='menu__fase-description'>Durante o ciclo de descoque do reator R‑98501B, ocorre uma interrupção imprevista. Parte do coque permanece no interior do equipamento, sob condições potencialmente perigosas. Pressões e temperaturas começam a se comportar de forma instável. Há risco de coque quente, emissões de vapores e impacto na integridade do equipamento e da unidade.</p>
+                <p className='menu__fase-nivel'>Simples</p>
+                <h2 className='menu__fase-title'>Parada de Manutenção Programada</h2>
+                <p className='menu__fase-description'>A unidade está operando com carga total e requer redução gradual para dar início à parada de manutenção. Parâmetros Iniciais Normais.</p>
                 <div className='menu__fase-skill-container'>
                 <p className='menu__fase-skill'>Comunicação</p>
                 <p className='menu__fase-skill'>Consciência Situacional</p>

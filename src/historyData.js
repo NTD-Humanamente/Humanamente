@@ -22,15 +22,15 @@ Leia o contexto, escolha sua ação em até 2 minutos e acompanhe a evolução d
   video: videoHistory
 },
 {
-  subtitle: "Operação em Equipe - Complexo",
-  title: "Interrupção Inesperada do Descoque",
-  text: `Você está em turno em uma unidade de FCC. Um ciclo de descoque está em andamento no reator R‑98501B. A operação seguia o procedimento, mas, no meio do processo, ocorre uma interrupção inesperada: parte do coque permanece no reator, em condição potencialmente instável.
+  subtitle: "Operação em Equipe - Simples",
+  title: "Parada de Manutenção Programada",
+  text: `Vocês estão iniciando o turno na refinaria e devem revisar se todos protocolos estão conforme e se todos os setores então cientes da parada da FCC para a manutenção. Cada equipe confirma o recebimento da programação e começa a revisar os procedimentos.
 
-Os instrumentos indicam variações de pressão e temperatura, e a equipe de campo relata ruídos e odores incomuns próximos ao sistema de descarga.
+Os Engenheiros e supervisores de operação analisam os fluxogramas de engenharia para identificar cada ponto onde a raquetes devem ser inseridas para isolar reatores, torres, vasos e bombas.
 
-A qualquer momento, uma decisão precipitada ou a falta de coordenação pode resultar em sobrepressão, emissões não controladas ou risco à integridade da equipe.
+Vamos preparar a Unidade para a Parada Programada de Manutenção de modo que haja segurança das pessoas e da unidade.
 
-Você terá 2 minutos para cada decisão.`,
+Vocês terão 2 minutos para cada decisão.`,
   image: imageGame3,
   video: videoHistory
 },

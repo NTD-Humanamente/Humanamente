@@ -74,8 +74,8 @@ return (
 
       {screen === "menu" && <Menu profileName={profileName} scores={gameScores} onLogin={(scenarioIndex) => {setSelectedScenario(scenarioIndex); setScreen("history");}} onLogout={handleLogout}/>}
       {screen === "history" && <History profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("game")} back={() => setScreen("menu")} onLogout={handleLogout}/>}
-      {screen === "game" && <Game profileName={profileName} onGameEnd={handleGameEnd} onLogout={handleLogout}/>}
-      {screen === "end" && <End profileName={profileName} scores={gameScores} onLogin={() => setScreen("feedback")} onLogout={handleLogout}/>}
+      {screen === "game" && <Game profileName={profileName} selectedScenario={selectedScenario} onGameEnd={handleGameEnd} onLogout={handleLogout}/>}
+      {screen === "end" && <End profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("feedback")} onLogout={handleLogout}/>}
       {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores} onLogout={handleLogout}/>}
     </div>
   );
