@@ -8,7 +8,7 @@ import imageGame7 from "./assets/Image/game7.png";
 import imageGame8 from "./assets/Image/game8.png";
 import imageGame9 from "./assets/Image/game9.png";
 import imageGame10 from "./assets/Image/game10.png";
-
+//
 import imageGame11 from "./assets/Image/game11.png";
 import imageGame12 from "./assets/Image/game12.png";
 import imageGame13 from "./assets/Image/game13.png";
@@ -64,7 +64,7 @@ const gameData = [{
       },
       {
         texto: "Tentar confirmar as leituras analisando histórico de dados (trends, logs) por alguns minutos, esperando ver se a concentração de H₂S se mantém antes de declarar condição anormal.",
-      notech:{
+        notech:{
           "comunicacao": 2,
           "cooperacao": 2,
           "lideranca": 2,
@@ -81,13 +81,13 @@ const gameData = [{
     descricao:"O alarme de gás tóxico é disparado. SMS e brigada são avisados. Parte da equipe se desloca para pontos de reunião. Alguns operadores de campo ainda estão na área, aguardando instruções claras. Como você organiza a resposta inicial:",
     opcoes: [
       {
-        texto: "Bloquear imediatamente o acesso à área da B‑98508A/B, emitir mensagem de rádio “Ninguém entra na área até nova ordem” e confirmar se há pessoas em campo.",
-      notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 5,
-          "tomada_decisao": 4,
-          "consciencia_situacional": 5,
+        texto: “Bloquear imediatamente o acesso à área da B‑98508A/B, emitir mensagem de rádio “Ninguém entra na área até nova ordem” e confirmar se há pessoas em campo.”,
+        notech:{
+          “comunicacao”: 4,
+          “cooperacao”: 4,
+          “lideranca”: 5,
+          “tomada_decisao”: 4,
+          “consciencia_situacional”: 5,
         }
       },
       {
@@ -479,8 +479,8 @@ const gameData = [{
     descricao:"O caldeireiro, por uma falha de comunicação e sem aguardar a emissão da devida permissão de trabalho, inicia atividades raqueteamento em uma caldeira sem a verificação dos riscos operacionais e sem o controle de segurança. A documentação de risco não foi validada para essa atividade específica. Como você organiza a resposta inicial:",
     opcoes: [
       {
-        texto: "O caldeireiro não precisava aguardar a emissão da permissão de trabalho para realizar uma atividade relacionada ao raqueteamento.",
-      notech:{
+        texto: "O Supervisor deve imediatamente parar a atividade, comunicar ao operador e questionar o caldeireiro sobre a permissão de trabalho.",
+        notech:{
           "comunicacao": 4,
           "cooperacao": 4,
           "lideranca": 5,
@@ -489,8 +489,8 @@ const gameData = [{
         }
       },
       {
-        texto: "O Supervisor deve verificar há riscos associados à atividade do caldeireiro e caso não haja pode liberar a atividade a ser executada pelo caldeireiro estão identificados na documentação de riscos e garantir que os procedimentos sejam seguidos. ",
-      notech:{
+        texto: "O Supervisor deve verificar se os riscos associados à atividade do caldeireiro estão identificados na documentação de riscos e garantir que os procedimentos sejam seguidos.",
+        notech:{
           "comunicacao": 2,
           "cooperacao": 2,
           "lideranca": 2,
@@ -499,7 +499,7 @@ const gameData = [{
         }
       },
       {
-        texto: "O Supervisor deve imediatamente parar a atividade, comunicar ao operador e questionar o caldeireiro sobre a permissão de trabalho. ",
+        texto: "O caldeireiro não precisava aguardar a emissão da permissão de trabalho para realizar uma atividade relacionada ao raqueteamento.",
         notech:{
           "comunicacao": 3,
           "cooperacao": 3,
@@ -590,7 +590,7 @@ const gameData = [{
     subtitle:"Operação em Equipe - Simples",
     title:"Parada de Manutenção Programada",
     image:imageGame15,
-    descricao:"Tendo em vista que elaboração das matrizes de Libra foi copiada da parada anterior sem a devida revisão da Lista de Bloqueios e sem considerar a atualização da planta, a Lista de Bloqueios está desatualizada. Qual a melhor decisão decisão:",
+    descricao:"Tendo em vista que a elaboração das matrizes de Libra foi copiada da parada anterior sem a devida revisão da Lista de Bloqueios e sem considerar a atualização da planta, a Lista de Bloqueios está desatualizada. Qual a melhor decisão:",
     opcoes: [
       {
         texto: "Solicitar ao Coordenador de planejamento todas as Gestões de Mudanças implementadas desde a última parada para atualizar as matrizes de Libra.",
@@ -631,7 +631,7 @@ const gameData = [{
     descricao:"Identificou-se a necessidade de identificar os riscos potenciais e introduzir medidas de controle para sua redução ou eliminação do risco ambiental durante a redução da carga para a parada de manutenção. Qual a melhor decisão:",
     opcoes: [
       {
-        texto: "Na redução de carga da FCC têm-se pouco tempo e muito transiente. Deve-se focar em medidas de controle medidas de controle já existentes, sem depender de obra ou novos projetos, descrevendo uma lista de ações corretivas em caso de falha na identificação de um risco ambiental.",
+        texto: "Na redução de carga da FCC têm-se pouco tempo e muito transiente. Deve-se focar em medidas de controle já existentes, sem depender de obra ou novos projetos, descrevendo uma lista de ações corretivas em caso de falha na identificação de um risco ambiental.",
       notech:{
           "comunicacao": 5,
           "cooperacao": 5,
