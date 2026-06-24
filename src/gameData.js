@@ -81,13 +81,13 @@ const gameData = [{
     descricao:"O alarme de gás tóxico é disparado. SMS e brigada são avisados. Parte da equipe se desloca para pontos de reunião. Alguns operadores de campo ainda estão na área, aguardando instruções claras. Como você organiza a resposta inicial:",
     opcoes: [
       {
-        texto: “Bloquear imediatamente o acesso à área da B‑98508A/B, emitir mensagem de rádio “Ninguém entra na área até nova ordem” e confirmar se há pessoas em campo.”,
+        texto: "Bloquear imediatamente o acesso à área da B‑98508AB, emitir mensagem de rádio “Ninguém entra na área até nova ordem” e confirmar se há pessoas em campo.",
         notech:{
-          “comunicacao”: 4,
-          “cooperacao”: 4,
-          “lideranca”: 5,
-          “tomada_decisao”: 4,
-          “consciencia_situacional”: 5,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 5,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 5,
         }
       },
       {
